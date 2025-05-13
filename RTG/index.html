@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Falling Bottles Game</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="game-container">
+    <div class="difficulty-buttons" id="difficulty-buttons">
+      <button onclick="startGame('easy')">Easy</button>
+      <button onclick="startGame('medium')">Medium</button>
+      <button onclick="startGame('hard')">Hard</button>
+    </div>
+
+    <div id="scoreboard">
+      <p>Score: <span id="score">0</span></p>
+    </div>
+
+    <p id="game-status">Choose difficulty to start</p>
+
+    <div id="game-area">
+      <div class="falling-bottle" id="bottle1"><i class="fas fa-bottle-water"></i></div>
+      <div class="falling-bottle" id="bottle2"><i class="fas fa-bottle-water"></i></div>
+      <div class="falling-bottle" id="bottle3"><i class="fas fa-bottle-water"></i></div>
+    </div>
+
+    <div id="buttons-container">
+      <button class="key-btn" onclick="handleKeyPress('a')">A</button>
+      <button class="key-btn" onclick="handleKeyPress('s')">S</button>
+      <button class="key-btn" onclick="handleKeyPress('d')">D</button>
+    </div>
+  </div>
+
+  <!-- Popup Modal -->
+  <div id="popup-modal" class="modal">
+    <div class="modal-content">
+      <h3>🎯 Game Over!</h3>
+      <div id="popup-content"></div>
+      <button onclick="restartGame()">Restart</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
